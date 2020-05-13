@@ -1,0 +1,15 @@
+[
+  {"IsPayed":"false"},
+  { "id":2,
+    "name":"BeeLine",
+    "image":"https://sun9-24.userapi.com/c858220/v858220723/1f68a2/p9o2s203Jx4.jpg",
+    "alt":"Megafon" },
+  { "id":1,
+    "name":"Mts",
+    "image":"https://sun9-35.userapi.com/c858220/v858220723/1f68b0/RCEcHYQCdAI.jpg",
+    "alt":"Megafon" },
+  { "id":3,
+    "name":"Megafon",
+    "image":"https://sun9-27.userapi.com/c858220/v858220723/1f68a9/juVdmPGRlYk.jpg",
+    "alt":"Megafon" }
+]
