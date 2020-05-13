@@ -6,7 +6,7 @@ const BeeLine = (props) =>{
 
     return (
         <div>
-            BeeLine
+            BeeLineq
             <Terminal/>
             <Button/>
         </div>
