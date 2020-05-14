@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import Mts from "./Opeators/Mts";
 import BeeLine from "./Opeators/BeeLine";
 import Megafon from "./Opeators/Megafon";
@@ -31,18 +31,14 @@ const WreapperMainContaner = styled.div`
 }
 `
 
-const Header = styled.h2`
-  padding: 10px 20px;
-  text-align: center;
-  color: white;
-  fontSize: 22px
-`;
+
 const MainContaner = styled.div`
-   opacity:0; /*Элемент полностью прозрачный (невидимый)*/
-   transition: 1s; /*Скорость перехода состояния элемента*/
-   animation: show 3s 1; /* Указываем название анимации, её время и количество повторов*/
-   animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
-   animation-delay: 0.5s; /* Задержка перед началом */
+   min-width: 250px;
+   opacity:0; 
+   transition: 1s; 
+   animation: show 3s 1;
+   animation-fill-mode: forwards; 
+   animation-delay: 0.5s; 
 
     @keyframes show{
     0%{
@@ -60,7 +56,7 @@ const MainMenu = (props) => {
     return (
         <WreapperMainContaner>
             <MainContaner>
-                <Header> Выберите оператора </Header>
+
                 <Route exact path='/' component={Navigation}/>
                 <Route path='/Mts' component={Mts}/>
                 <Route path='/BeeLine' component={BeeLine}/>

@@ -10,20 +10,72 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
+     margin: 0px 10px;
 `
-const Button = styled.button`
-
+const PayButton = styled.button`
+    width:50%;
+    padding: 10px 18px;
+    font-size:12pt;
+    color: white;
+    border-radius: 10px 0px 0px 10px;
+    height: 50px;
+    background: none;
+    border: 2px solid white;
+    margin: 15px 0px;
+    transition:0.5s;
+    cursor:pointer;
+    outline:none;
+    :hover{
+    transform: scale(1.1);
+     background: white;
+     border: 2px solid black;
+     color:black;
+    }
+`
+const BackButton = styled(PayButton)`
+    width:50%;
+    border-radius: 0px 10px 10px 0px;
 `
 
+const Input = styled.input`
+    width: 100%;
+    padding: 10px 18px;
+    font-size:12pt;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    background: none;
+    border: 2px solid white;
+    margin: 15px 0px;
+    transition:1s;
+    outline:none;
+    ::placeholder{
+    color:white;
+    font-size:12pt;
+    }
+    :hover,:focus{
+    transform: scale(1.05);  
+    color:black;
+    background:white;
+    border: 2px solid black;
+    ::placeholder{
+    color:black;
+    }
+    ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+  `
 const TerminalInterface = (props) => {
 
 
-    let SubmitForm = (e) => {
+  let SubmitForm = (e) => {
+      e.preventDefault()
 
-        let PhoneText = ValidatePhoneInput.current.value;
+     /* let PhoneText = ValidatePhoneInput.current.value;
         let SumText = ValidatePhoneInput.current.value;
 
-        if (PhoneText > 1000 || PhoneText < 0) {
+/!*        if (PhoneText > 1000 || PhoneText < 0) {
             alert("Введите значение в диапазоне от 0 до 1000")
             e.preventDefault()
         } else if (PhoneText === "") {
@@ -38,23 +90,26 @@ const TerminalInterface = (props) => {
             e.preventDefault()
         } else {
             alert("успех")
-        }
+        }*!/*/
 
     }
     return (
         <Form action="/" onSubmit={SubmitForm}>
             <div>
-                <input type={"phone"} ref={ValidatePhoneInput} placeholder={"Телефон"}/>
+                <Input type={"tel"} ref={ValidatePhoneInput} placeholder={"Телефон"}/>
             </div>
             <div>
-                <input type={"number"} ref={ValidateSumInput} placeholder={"Сумма"}/>
+                <Input type={"number"} ref={ValidateSumInput} placeholder={"Сумма"}/>
+
             </div>
+
             <div>
-                <Button type={"submit"}>Оплатить</Button>
+                <PayButton type={"submit"}>Оплатить</PayButton>
+                <NavLink to="/">
+                    <BackButton>Назад</BackButton>
+                </NavLink>
             </div>
-            <NavLink to="/">
-                <Button>Назад</Button>
-            </NavLink>
+
         </Form>
     )
 
