@@ -1,14 +1,13 @@
 import React from 'react';
-import Terminal from "./TerminalInterface/Terminal";
-import Button from "./TerminalInterface/button";
+import TerminalInterface from "./TerminalInterface/TerminalInterface";
+
 
 const Mts = (props) =>{
 
     return (
         <div>
-            Mts
-        <Terminal/>
-        <Button/>
+            MTS
+        <TerminalInterface/>
         </div>
     )
 

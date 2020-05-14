@@ -1,14 +1,13 @@
 import React from 'react';
-import Terminal from "./TerminalInterface/Terminal";
-import Button from "./TerminalInterface/button";
+import TerminalInterface from "./TerminalInterface/TerminalInterface";
+
 
 const BeeLine = (props) =>{
 
     return (
         <div>
-            BeeLineq
-            <Terminal/>
-            <Button/>
+            BEELINE
+            <TerminalInterface/>
         </div>
     )
 
