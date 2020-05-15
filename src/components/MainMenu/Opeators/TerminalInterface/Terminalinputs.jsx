@@ -66,7 +66,7 @@ const Input = styled.input`
     margin: 0;
     }
   `
-const TerminalInterface = (props) => {
+const Terminalinputs = (props) => {
 
 
   let SubmitForm = (e) => {
@@ -115,4 +115,4 @@ const TerminalInterface = (props) => {
 
 }
 
-export default TerminalInterface
+export default Terminalinputs

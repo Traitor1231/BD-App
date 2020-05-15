@@ -33,6 +33,9 @@ const WreapperMainContaner = styled.div`
 
 
 const MainContaner = styled.div`
+   width: 100%;
+   max-width: 900px;
+   margin: 0px 15%;
    min-width: 250px;
    opacity:0; 
    transition: 1s; 
