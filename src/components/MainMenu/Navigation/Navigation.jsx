@@ -5,7 +5,7 @@ import store from "../../../store"
 
 const OperatorLogoWrapper = styled.div`
     display:inline-block;
-
+    margin: 10px 0px;
     -webkit-transition: all 0.3s ease;;
     -moz-transition: all 0.3s ease;;
     -o-transition: all 0.3s ease;;
@@ -15,27 +15,37 @@ const OperatorLogoWrapper = styled.div`
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
+    filter: invert(1);
     
-   
 }
 `
 
 const Header = styled.h2`
+  font-weight: normal;
   padding: 10px 20px;
   text-align: center;
   color: white;
-  font-size: 3vmax;
+  font-size: 2.5vw;
+   @media(max-width:1045px){
+        font-size: 26px;
+    }
 `;
 
 const OperatorLogo = styled.img`
-    max-width: 175px;
+    width: 15vw;
+    @media(max-width:1045px){
+            width: 155px;
+    }
 
-}
-    
 `;
 
 const OperatorTextWrapper = styled.div`
     color:white;
+    font-size:2vw;
+     @media(max-width:1045px){
+        font-size: 20px;
+    }
+
 `
 let NavigationContent = store.map(store => <NavLink to={"/" + store.name}><OperatorLogoWrapper><OperatorLogo
     src={store.image} alt={store.alt}/>
@@ -48,7 +58,7 @@ const Navigation = (props) => {
 
     return (
         <div>
-            <Header> Выберите оператора </Header>
+            <Header> ВЫБЕРИТЕ ОПЕРАТОРА</Header>
             {NavigationContent}
         </div>
     )

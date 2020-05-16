@@ -1,5 +1,5 @@
 import React from 'react';
-import Terminalinputs from "./TerminalInterface/Terminalinputs";
+import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
 
 const Megafon = (props) =>{
@@ -7,7 +7,7 @@ const Megafon = (props) =>{
     return (
         <div>
             <OperatorTextWrapper>MEGAFON</OperatorTextWrapper>
-            <Terminalinputs/>
+            <TerminalInterface/>
         </div>
     )
 

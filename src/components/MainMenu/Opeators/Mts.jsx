@@ -1,5 +1,5 @@
 import React from 'react';
-import Terminalinputs from "./TerminalInterface/Terminalinputs";
+import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
 
 
@@ -8,7 +8,7 @@ const Mts = (props) => {
     return (
         <div>
             <OperatorTextWrapper>MTS</OperatorTextWrapper>
-            <Terminalinputs/>
+            <TerminalInterface/>
         </div>
     )
 
