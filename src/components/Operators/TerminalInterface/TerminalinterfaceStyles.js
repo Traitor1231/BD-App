@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const ErrorDiv = styled.div`
+ color:white;
+ font-size:4vw;
+`
+
+
 export const Form = styled.form`
 display: flex;
 flex-direction: column;

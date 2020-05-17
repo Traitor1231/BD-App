@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const WreapperMainContaner = styled.div`
  height: ${
-    document.querySelector("html").clientHeight + "px"
+    document.querySelector("html").clientHeight + "px" 
 };
  display:flex;
  justify-content:center;
