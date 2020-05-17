@@ -3,13 +3,15 @@ import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
 
 
-const Mts = (props) => {
+const Mts = () => {
 
     return (
-        <div>
-            <OperatorTextWrapper>MTS</OperatorTextWrapper>
-            <TerminalInterface/>
-        </div>
+        <main>
+            <section>
+                <OperatorTextWrapper>MTS</OperatorTextWrapper>
+                <TerminalInterface/>
+            </section>
+        </main>
     )
 
 }
