@@ -18,4 +18,5 @@ let store = [
       alt: "MEGAFON"
     }
   ]
+
 export default store;

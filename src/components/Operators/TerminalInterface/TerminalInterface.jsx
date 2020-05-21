@@ -1,44 +1,84 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import {ErrorDiv,BackButton, Form, Input, InputWrapper, PayButton} from "./TerminalinterfaceStyles";
-
-let ValidatePhoneInput = React.createRef();
-let ValidateSumInput = React.createRef();
+import {
+    ErrorDiv,
+    BackButton,
+    Form,
+    InputWrapper,
+    PayButton,
+    PhoneInput,
+    SumInput
+} from "./TerminalinterfaceStyles";
+import InputMask from 'react-input-mask';
+let PhoneInputRef = React.createRef();
+let SumInputRef = React.createRef();
 
 const TerminalInterface = () => {
 
 
+    let SumValidateMaxValue = () => {
+        let SumMax = SumInputRef
+     //   if(!SumMax.current.value.includes("₽")){
+     //   SumMax.current.value = SumMax.current.value +"₽"
+
+        if (SumMax.current.value.length > 4 ) {
+            SumMax.current.value = SumMax.current.value.substring(0, 4);
+
+        }
+    }
+
+
+    let PhoneValidateValue = (e) => {
+        let error = document.querySelector(".error");
+        if (!e.target.validity.valid ) {
+            e.preventDefault();
+            error.innerHTML = "Введите корректный адрес телефона";
+        }
+
+
+    };
+
     let SubmitForm = (e) => {
+
+
         e.preventDefault()
-        let PhoneText = ValidatePhoneInput.current.value;
-        let SumText = ValidateSumInput.current.value;
-        let error = document.querySelector(".error")
-        if (PhoneText > 1000 || PhoneText < 0) {
-            error.innerHTML = "Введите значение в диапазоне от 0 до 1000 в поле: Телефон";
-            e.preventDefault()
-        } else if (PhoneText === "") {
+        let PhoneText = PhoneInputRef.current.value;
+        let SumText = SumInputRef.current.value;
+        let error = document.querySelector(".error");
+
+        if (PhoneText === "") {
             error.innerHTML = "Вы не заполнили поле: Телефон";
             e.preventDefault()
-        } else if (SumText > 1000 || SumText < 0) {
-            error.innerHTML = "Введите значение в диапазоне от 0 до 1000 в поле: Сумма";
+        } else if (SumText > 1000 || SumText < 1) {
+            error.innerHTML = "Введите значение в диапазоне от 1 до 1000 в поле: \"Сумма\"";
             e.preventDefault()
         } else if (SumText === "") {
-            error.innerHTML = "Вы не заполнили поле: Сумма";
+            error.innerHTML = "Вы не заполнили поле: \"Сумма\"";
+            e.preventDefault()
+        } else if(SumText.startsWith(0)){
+            error.innerHTML = "Поле: \"Сумма\" не может начинаться с нуля";
             e.preventDefault()
         } else {
-            error.innerHTML = "успех";
+            error.innerHTML = "Оплачено";
         }
+
+
 
     }
 
+
+
     return (
-        <Form  action="/" onSubmit={SubmitForm}>
+
+        <Form action="/" onSubmit={SubmitForm}>
             <ErrorDiv className={"error"}></ErrorDiv>
             <InputWrapper>
-                <Input type={"tel"} ref={ValidatePhoneInput} placeholder={"Телефон"}/>
+                <InputMask  mask="+7 (999) 999-99-99">
+                    {() => <PhoneInput title="" onInvalid={PhoneValidateValue} pattern={"\\+7\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}"} type={"tel"} ref={PhoneInputRef} placeholder={"Телефон"}/>}
+                </InputMask>
             </InputWrapper>
             <InputWrapper>
-                <Input type={"number"} ref={ValidateSumInput} placeholder={"Сумма"}/>
+                <SumInput onInput={SumValidateMaxValue} ref={SumInputRef} placeholder={"Сумма"}/>
             </InputWrapper>
             <InputWrapper>
                 <PayButton type={"submit"}>Оплатить</PayButton>

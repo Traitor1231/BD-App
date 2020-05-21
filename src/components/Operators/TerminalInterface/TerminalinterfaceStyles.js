@@ -40,7 +40,7 @@ export const BackButton = styled(PayButton)`
     border-radius: 0px 500px 500px 0px;
 `
 
-export const Input = styled.input`
+export const PhoneInput = styled.input`
    
  -moz-appearance:textfield;
  width: 100%;
@@ -96,5 +96,10 @@ export const Input = styled.input`
     }
      
   `
+export const SumInput = styled(PhoneInput)`
+
+`
+
+
 export const InputWrapper = styled.div`
 `
