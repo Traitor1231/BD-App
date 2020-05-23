@@ -4,10 +4,10 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-
+import {SumValidateMaxValue,PhoneValidateValue,SubmitForm} from "./validation/validation"
 ReactDOM.render(
     <BrowserRouter>
-    <App/>
+    <App SumValidateMaxValue={SumValidateMaxValue} PhoneValidateValue={PhoneValidateValue} SubmitForm={SubmitForm}/>
     </BrowserRouter>,
   document.getElementById('root')
 );

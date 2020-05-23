@@ -3,13 +3,13 @@ import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
 
 
-const BeeLine = () => {
+const BeeLine = (props) => {
 
     return (
         <main>
             <section>
                 <OperatorTextWrapper>BEELINE</OperatorTextWrapper>
-                <TerminalInterface/>
+                <TerminalInterface props={props}/>
             </section>
         </main>
     )

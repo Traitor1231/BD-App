@@ -2,13 +2,13 @@ import React from 'react';
 import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
 
-const Megafon = () =>{
+const Megafon = (props) =>{
 
     return (
         <main>
             <section>
                 <OperatorTextWrapper>MEGAFON</OperatorTextWrapper>
-                <TerminalInterface/>
+                <TerminalInterface props={props}/>
             </section>
         </main>
     )

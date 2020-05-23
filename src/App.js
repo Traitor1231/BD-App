@@ -4,16 +4,16 @@ import Mts from "./components/Operators/Mts";
 import BeeLine from "./components/Operators/BeeLine";
 import Megafon from "./components/Operators/Megafon";
 import Navigation from "./components/Navigation/Navigation";
-import {MainContaner, WreapperMainContaner} from "./AppStyles";
+import {MainContaner, WreapperMainContaner} from "./AppStyles";;
 
-const App = () => {
+const App = (props) => {
     return (
         <WreapperMainContaner>
             <MainContaner>
                 <Route exact path='/' render={ () => <Navigation /> } />
-                <Route path='/Mts'  render={ () => <Mts /> } />
-                <Route path='/BeeLine' render={ () => <BeeLine /> } />
-                <Route path='/Megafon' render={ () => <Megafon /> } />
+                <Route path='/Mts'  render={ () => <Mts validators={props}/>}/>
+                <Route path='/BeeLine' render={ () => <BeeLine validators={props}/> } />
+                <Route path='/Megafon' render={ () => <Megafon validators={props}/> } />
             </MainContaner>
         </WreapperMainContaner>
     )
