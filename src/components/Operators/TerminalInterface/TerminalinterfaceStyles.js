@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const ErrorDiv = styled.div`
+export const ErrorText = styled.div`
  color:white;
  font-size:4vw;
+ @media(max-width:357px){
+    font-size: 14px;
+}
 `
 
 
@@ -91,8 +94,9 @@ export const PhoneInput = styled.input`
          -webkit-appearance: none;
          margin: 0;
     }
-     @media(max-width:357px){
-         font-size: 14px;
+}
+   @media(max-width:357px){
+      font-size: 14px;
     }
      
   `
