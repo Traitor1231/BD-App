@@ -4,13 +4,15 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {SumValidateMaxValue,PhoneValidateValue,SubmitForm,PhoneInputRef,SumInputRef,ErrorTextRef} from "./validation/validation"
+import {SumValidateMaxValue,PhoneValidateValue,FormValidate,AddRubleSymbol,DeleteRubleSymbol,PhoneInputRef,SumInputRef,ErrorTextRef} from "./validation/validation"
 import store from "../src/store/store"
 ReactDOM.render(
     <BrowserRouter>
     <App SumValidateMaxValue={SumValidateMaxValue}
          PhoneValidateValue={PhoneValidateValue}
-         SubmitForm={SubmitForm}
+         FormValidate={FormValidate}
+         AddRubleSymbol={AddRubleSymbol}
+         DeleteRubleSymbol={DeleteRubleSymbol}
          PhoneInputRef={PhoneInputRef}
          SumInputRef={SumInputRef}
          ErrorTextRef={ErrorTextRef}

@@ -12,7 +12,7 @@ import {
 import InputMask from 'react-input-mask';
 const TerminalInterface = (props) => {
     return (
-        <Form action="/" onSubmit={props.props.props.SubmitForm}>
+        <Form action="/" onSubmit={props.props.props.FormValidate}>
             <ErrorText ref={props.props.props.ErrorTextRef} />
             <InputWrapper>
                 <InputMask  mask="+7 (999) 999-99-99">
@@ -20,7 +20,7 @@ const TerminalInterface = (props) => {
                 </InputMask>
             </InputWrapper>
             <InputWrapper>
-                <SumInput type={"number"} onInput={props.props.props.SumValidateMaxValue} ref={props.props.props.SumInputRef} placeholder={"Сумма"}/>
+                <SumInput  type={"number"} onBlur={props.props.props.DeleteRubleSymbol} onClick={props.props.props.AddRubleSymbol} onInput={props.props.props.SumValidateMaxValue} ref={props.props.props.SumInputRef} placeholder={"Сумма"}/>
             </InputWrapper>
             <InputWrapper>
                 <PayButton type={"submit"}>Оплатить</PayButton>
