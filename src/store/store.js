@@ -1,22 +1,42 @@
-let store = [
-    {
-      id: 1,
-      name: "BEELINE",
-      image: "https://i.ibb.co/0D7byB1/Bee-Line-logo.png",
-      alt: "BEELINE"
+import BeeLine_logo from "../assets/images/Bee-Line-logo.png"
+import Mts_logo from "../assets/images/Mts-logo.png"
+import MegaFon_logo from "../assets/images/Megafon-logo.png"
+import {rerenderEntireTree} from "../index";
+
+let store = {
+    _state: {
+        operatorsInfo: [
+            {
+                id: 1,
+                name: "BEELINE",
+                image: BeeLine_logo,
+                alt: "BEELINE",
+                isPayed: false
+            },
+            {
+                id: 2,
+                name: "MTS",
+                image: Mts_logo,
+                alt: "MTS",
+                isPayed: false
+            }
+            ,
+            {
+                id: 3,
+                name:"MEGAFON",
+                image: MegaFon_logo,
+                alt: "MEGAFON",
+                isPayed:false
+            }
+        ]
     },
-    {
-      id: 2,
-      name: "MTS",
-      image: "https://i.ibb.co/gvHrBW8/Mts-logo.png",
-      alt: "MTS"
+    getState() {
+        return this._state;
     },
-    {
-      id: 3,
-      name: "MEGAFON",
-      image: "https://i.ibb.co/510qS2V/Megafon-logo.png",
-      alt: "MEGAFON"
+    ChangePayedStatus() {
+        this._state.operatorsInfo[0].isPayed = true
+        rerenderEntireTree()
     }
-  ]
+}
 
 export default store;

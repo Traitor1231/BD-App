@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import {ChooseOperatorTextWrapper, OperatorLogo, OperatorLogoWrapper, OperatorTextWrapper} from "./NavigationStyles";
 
 const Navigation = (props) => {
-    let NavigationContent = props.store.map(store =>
+    let NavigationContent = props.operatorsInfo.map(store =>
         <NavLink to={"/" + store.name}>
             <OperatorLogoWrapper>
                 <OperatorLogo src={store.image} alt={store.alt}/>

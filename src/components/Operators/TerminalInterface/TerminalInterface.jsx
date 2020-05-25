@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {
     ErrorText,
@@ -11,6 +11,12 @@ import {
 } from "./TerminalinterfaceStyles";
 import InputMask from 'react-input-mask';
 const TerminalInterface = (props) => {
+    let [EditMode,SetEditMode] = useState(false)
+
+     if(props.props.props.store._state.operatorsInfo[0].isPayed === true){
+         SetEditMode(true)
+     }
+
     return (
         <Form action="/" onSubmit={props.props.props.FormValidate}>
             <ErrorText ref={props.props.props.ErrorTextRef} />
@@ -20,7 +26,7 @@ const TerminalInterface = (props) => {
                 </InputMask>
             </InputWrapper>
             <InputWrapper>
-                <SumInput  type={"number"} onBlur={props.props.props.DeleteRubleSymbol} onClick={props.props.props.AddRubleSymbol} onInput={props.props.props.SumValidateMaxValue} ref={props.props.props.SumInputRef} placeholder={"Сумма"}/>
+                <SumInput  type={"text"} onBlur={props.props.props.DeleteRubleSymbol} onClick={props.props.props.AddRubleSymbol} onInput={props.props.props.SumValidateMaxValue} ref={props.props.props.SumInputRef} placeholder={"Сумма"}/>
             </InputWrapper>
             <InputWrapper>
                 <PayButton type={"submit"}>Оплатить</PayButton>

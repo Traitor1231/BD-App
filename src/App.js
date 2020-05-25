@@ -10,7 +10,7 @@ const App = (props) => {
     return (
         <WreapperMainContaner>
             <MainContaner>
-                <Route exact path='/' render={ () => <Navigation store={props.store}/> } />
+                <Route exact path='/' render={ () => <Navigation operatorsInfo={props.store._state.operatorsInfo}/> } />
                 <Route path='/Mts'  render={ () => <Mts props={props}/>}/>
                 <Route path='/BeeLine' render={ () => <BeeLine props={props}/> } />
                 <Route path='/Megafon' render={ () => <Megafon props={props}/> } />
