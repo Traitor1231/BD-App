@@ -23,10 +23,10 @@ let store = {
             ,
             {
                 id: 3,
-                name:"MEGAFON",
+                name: "MEGAFON",
                 image: MegaFon_logo,
                 alt: "MEGAFON",
-                isPayed:false
+                isPayed: false
             }
         ]
     },
@@ -36,6 +36,12 @@ let store = {
     ChangePayedStatus() {
         this._state.operatorsInfo[0].isPayed = true
         rerenderEntireTree()
+    },
+    SubmitData() {
+        store._state.operatorsInfo[0].isPayed = false
+    },
+    RejectData() {
+        store._state.operatorsInfo[0].isPayed = true
     }
 }
 

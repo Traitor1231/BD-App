@@ -15,7 +15,7 @@ const Navigation = (props) => {
     return (
         <header>
             <nav>
-                <ChooseOperatorTextWrapper> ВЫБЕРИТЕ ОПЕРАТОРА</ChooseOperatorTextWrapper>
+                <ChooseOperatorTextWrapper > ВЫБЕРИТЕ ОПЕРАТОРА</ChooseOperatorTextWrapper>
                 {NavigationContent}
             </nav>
         </header>

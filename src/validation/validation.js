@@ -39,8 +39,10 @@ export let FormValidate = (e) => {
         ErrorTextRef.current.innerHTML = "Поле: \"Сумма\" не может начинаться с нуля";
         e.preventDefault()
     } else {
-        ErrorTextRef.current.innerHTML = "Оплачено";
-        store.ChangePayedStatus()
+        ErrorTextRef.current.innerHTML = "Ожидание ответа от сервера...";
+        setTimeout(() => {
+            store.ChangePayedStatus()
+        }, 1000)
     }
 
 }
