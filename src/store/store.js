@@ -33,10 +33,10 @@ let store = {
         return this._state;
     },
     SubmitData() {
-        this._state.payableStatus.isPayed = false
+        this.getState().payableStatus.isPayed = false
     },
     RejectData() {
-        this._state.payableStatus.isPayed = true
+        this.getState().payableStatus.isPayed = true
     },
     SumValidateMaxValue() {
         if (SumInputRef.current.value.length > 3) SumInputRef.current.value = SumInputRef.current.value.substring(0, 4);
@@ -79,7 +79,7 @@ let store = {
             setTimeout(() => {
                 store.RejectData()
                 rerenderEntireTree()
-                if (store._state.payableStatus.isPayed === true) {
+                if (store.getState().payableStatus.isPayed === true) {
                     ErrorTextRef.current.innerHTML = "При оплате произошла ошибка, попробуйте позже";
                 }
             }, 2000)

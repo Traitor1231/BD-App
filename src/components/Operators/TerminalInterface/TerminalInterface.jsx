@@ -15,7 +15,6 @@ export let SumInputRef = React.createRef();
 export let ErrorTextRef = React.createRef();
 
 const TerminalInterface = (props) => {
-
     let [EditMode, SetEditMode] = useState()
     useEffect(() => {
         SetEditMode(props.store._state.payableStatus.isPayed)
