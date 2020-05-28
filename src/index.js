@@ -4,21 +4,15 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {SumValidateMaxValue,PhoneValidateValue,FormValidate,AddRubleSymbol,DeleteRubleSymbol,PhoneInputRef,SumInputRef,ErrorTextRef} from "./validation/validation"
 import store from "../src/store/store"
+import {Provider} from "./StoreContext";
+
 export let rerenderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App SumValidateMaxValue={SumValidateMaxValue}
-                 PhoneValidateValue={PhoneValidateValue}
-                 FormValidate={FormValidate}
-                 AddRubleSymbol={AddRubleSymbol}
-                 DeleteRubleSymbol={DeleteRubleSymbol}
-                 PhoneInputRef={PhoneInputRef}
-                 SumInputRef={SumInputRef}
-                 ErrorTextRef={ErrorTextRef}
-                 store={store}
-            />
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </BrowserRouter>,
         document.getElementById('root')
     );

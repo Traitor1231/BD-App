@@ -3,21 +3,22 @@ import {Route} from "react-router-dom";
 import Mts from "./components/Operators/Mts";
 import BeeLine from "./components/Operators/BeeLine";
 import Megafon from "./components/Operators/Megafon";
-import Navigation from "./components/Navigation/Navigation";
-import {MainContaner, WreapperMainContaner} from "./AppStyles";;
+import {MainContaner, WreapperMainContaner} from "./AppStyles";
+import NavigationContainer from "./components/Navigation/NavigationContainer";
 
-const App = (props) => {
+;
+
+const App = () => {
     return (
         <WreapperMainContaner>
             <MainContaner>
-                <Route exact path='/' render={ () => <Navigation operatorsInfo={props.store._state.operatorsInfo}/> } />
-                <Route path='/Mts'  render={ () => <Mts props={props}/>}/>
-                <Route path='/BeeLine' render={ () => <BeeLine props={props}/> } />
-                <Route path='/Megafon' render={ () => <Megafon props={props}/> } />
+                <Route exact path='/' render={ () => <NavigationContainer/> } />
+                <Route path='/Mts'  render={ () => <Mts/>}/>
+                <Route path='/BeeLine' render={ () => <BeeLine/> } />
+                <Route path='/Megafon' render={ () => <Megafon/> } />
             </MainContaner>
         </WreapperMainContaner>
     )
 
 }
-
 export default App

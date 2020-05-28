@@ -1,15 +1,14 @@
 import React from 'react';
-import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
+import TerminalInterfaceContainer from "../Operators/TerminalInterface/TerminalInterfaceContaner"
 
-
-const BeeLine = (props) => {
+const BeeLine = () => {
 
     return (
         <main>
             <section>
                 <OperatorTextWrapper>BEELINE</OperatorTextWrapper>
-                <TerminalInterface props={props}/>
+                <TerminalInterfaceContainer/>
             </section>
         </main>
     )

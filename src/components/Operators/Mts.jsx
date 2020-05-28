@@ -1,14 +1,14 @@
 import React from 'react';
-import TerminalInterface from "./TerminalInterface/TerminalInterface";
 import {OperatorTextWrapper} from "./OperatorsStyles";
+import TerminalInterfaceContainer from "./TerminalInterface/TerminalInterfaceContaner";
 
 
-const Mts = (props) => {
+const Mts = () => {
     return (
         <main>
             <section>
                 <OperatorTextWrapper>MTS</OperatorTextWrapper>
-                <TerminalInterface props={props}/>
+                <TerminalInterfaceContainer/>
             </section>
         </main>
     )
