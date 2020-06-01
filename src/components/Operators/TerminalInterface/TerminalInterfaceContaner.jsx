@@ -71,7 +71,11 @@ const TerminalInterfaceContainer = () => {
                     alert("При оплате произошла ошибка, попробуйте позже")
                 }
             }
+            let ReturnToMainMenu = () =>{
+                store.RejectData()
+            }
             return <TerminalInterface
+                ReturnToMainMenu={ReturnToMainMenu}
                 Redirect={Redirect}
                 SumValidateMaxValue={SumValidateMaxValue}
                 AddRubleSymbol={AddRubleSymbol}

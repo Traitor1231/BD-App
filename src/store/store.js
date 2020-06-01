@@ -4,7 +4,7 @@ import MegaFon_logo from "../assets/images/Megafon-logo.png"
 
 let store = {
 
-    _state: {
+    state: {
         operatorsInfo: [
             {
                 name: "BEELINE",
@@ -27,14 +27,11 @@ let store = {
             isPayed: false
         }
     },
-    getState() {
-        return this._state;
-    },
     SubmitData() {
-        this.getState().payableStatus.isPayed = true
+        this.state.payableStatus.isPayed = true
     },
     RejectData() {
-        this.getState().payableStatus.isPayed = false
+        this.state.payableStatus.isPayed = false
     },
 
 }

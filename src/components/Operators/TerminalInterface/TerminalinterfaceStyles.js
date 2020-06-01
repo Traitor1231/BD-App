@@ -6,15 +6,9 @@ export const ErrorText = styled.div`
  @media(max-width:357px){
     font-size: 14px;
 }
-`
-
-
+`;
 export const Form = styled.form`
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin: 0px 10px;
-`
+`;
 export const PayButton = styled.button`
  width:50%;
  padding: 10px 2vw;
@@ -23,7 +17,7 @@ export const PayButton = styled.button`
  border-radius: 500px 0px 0px 500px;
  background: none;
  border: 2px solid white;
- margin: 15px 0px;
+ margin: 1.3vw  0px;
  transition:0.3s;
  cursor:pointer;
  outline:none;
@@ -37,11 +31,11 @@ export const PayButton = styled.button`
      font-size: 14px;
 }
 
-`
+`;
 export const BackButton = styled(PayButton)`
     width:50%;
     border-radius: 0px 500px 500px 0px;
-`
+`;
 
 export const PhoneInput = styled.input`
    
@@ -53,7 +47,7 @@ export const PhoneInput = styled.input`
  border-radius: 500px;
  background: none;
  border: 2px solid white;
- margin: 15px 0px;
+ margin: 1.3vw  0px;
  transition:0.3s;
  outline:none;
  ::-ms-clear {
@@ -99,11 +93,8 @@ export const PhoneInput = styled.input`
       font-size: 14px;
     }
      
-  `
+  `;
 export const SumInput = styled(PhoneInput)`
-
-`
-
-
+`;
 export const InputWrapper = styled.div`
-`
+`;

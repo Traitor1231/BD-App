@@ -17,10 +17,10 @@ export let ErrorTextRef = React.createRef();
 
 const TerminalInterface = (props) => {
     let [EditMode, SetEditMode] = useState()
-
     useEffect(() => {
-        SetEditMode(props.store.getState().payableStatus.isPayed)
-    }, [props.store.getState().payableStatus.isPayed])
+        if(document.scrollHeight > document.clientHeight){alert("meme")}
+        SetEditMode(props.store.state.payableStatus.isPayed)
+    }, [props.store.state.payableStatus.isPayed])
 
     if (EditMode === true && props.Redirect() === true) return <Redirect to={"/"}/>
 
@@ -48,7 +48,7 @@ const TerminalInterface = (props) => {
             <InputWrapper>
                 <PayButton type={"submit"}>Оплатить</PayButton>
                 <NavLink to="/">
-                    <BackButton>Назад</BackButton>
+                    <BackButton onClick={props.ReturnToMainMenu}>Назад</BackButton>
                 </NavLink>
             </InputWrapper>
         </Form>
