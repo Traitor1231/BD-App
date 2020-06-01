@@ -29,6 +29,7 @@ export const PayButton = styled.button`
 }
  @media(max-width:357px){
      font-size: 14px;
+   
 }
 
 `;
@@ -91,6 +92,7 @@ export const PhoneInput = styled.input`
 }
    @media(max-width:357px){
       font-size: 14px;
+
     }
      
   `;
