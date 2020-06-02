@@ -1,7 +1,6 @@
 import BeeLine_logo from "../assets/images/Bee-Line-logo.png"
 import Mts_logo from "../assets/images/Mts-logo.png"
 import MegaFon_logo from "../assets/images/Megafon-logo.png"
-
 let store = {
 
     state: {

@@ -2,25 +2,26 @@ import React from 'react';
 import TerminalInterface, {ErrorTextRef, PhoneInputRef, SumInputRef} from "./TerminalInterface";
 import StoreContext from "../../../StoreContext";
 import {rerenderEntireTree} from "../../../index";
+
 const TerminalInterfaceContainer = () => {
 
     return <StoreContext.Consumer>
         {store => {
-            let Sumbol = "₽"
+            let RubleSumbol = "₽"
             let SumValidateMaxValue = () => {
                 if (SumInputRef.current.value.length > 3) SumInputRef.current.value = SumInputRef.current.value.substring(0, 4);
                 SumInputRef.current.value = SumInputRef.current.value.replace(/[^\d]/g, '');
-                SumInputRef.current.value = SumInputRef.current.value + Sumbol;
+                SumInputRef.current.value = SumInputRef.current.value + RubleSumbol;
                 SumInputRef.current.selectionEnd = SumInputRef.current.selectionStart - 1;
-                if (SumInputRef.current.value[0].includes(Sumbol)) SumInputRef.current.value = SumInputRef.current.value.replace(Sumbol, '')
+                if (SumInputRef.current.value[0].includes(RubleSumbol)) SumInputRef.current.value = SumInputRef.current.value.replace(RubleSumbol, '')
             };
             let AddRubleSymbol = () => {
                 SumInputRef.current.type = "text"
-                if (!SumInputRef.current.value.includes(Sumbol)) SumInputRef.current.value = SumInputRef.current.value + Sumbol;
+                if (!SumInputRef.current.value.includes(RubleSumbol)) SumInputRef.current.value = SumInputRef.current.value + RubleSumbol;
                 SumInputRef.current.selectionEnd = SumInputRef.current.selectionStart - 1;
             };
             let DeleteRubleSymbol = () => {
-                if (SumInputRef.current.value.includes(Sumbol)) SumInputRef.current.value = SumInputRef.current.value.replace(Sumbol, '')
+                if (SumInputRef.current.value.includes(RubleSumbol)) SumInputRef.current.value = SumInputRef.current.value.replace(RubleSumbol, '')
                 SumInputRef.current.type = "number"
             };
             let PhoneValidateValue = (e) => {
@@ -29,7 +30,7 @@ const TerminalInterfaceContainer = () => {
             };
             let FormValidate = (e) => {
                 e.preventDefault()
-                SumInputRef.current.value = SumInputRef.current.value.replace(Sumbol, '')
+                SumInputRef.current.value = SumInputRef.current.value.replace(RubleSumbol, '')
                 if (PhoneInputRef.current.value === "") {
                     ErrorTextRef.current.innerHTML = "Вы не заполнили поле: Телефон";
                     e.preventDefault()
