@@ -7,7 +7,7 @@ const TerminalInterfaceContainer = () => {
 
     return <StoreContext.Consumer>
         {store => {
-            let RubleSumbol = "₽"
+            const RubleSumbol = "₽"
             let SumValidateMaxValue = () => {
                 if (SumInputRef.current.value.length > 3) SumInputRef.current.value = SumInputRef.current.value.substring(0, 4);
                 SumInputRef.current.value = SumInputRef.current.value.replace(/[^\d]/g, '');
@@ -24,11 +24,11 @@ const TerminalInterfaceContainer = () => {
                 if (SumInputRef.current.value.includes(RubleSumbol)) SumInputRef.current.value = SumInputRef.current.value.replace(RubleSumbol, '')
                 SumInputRef.current.type = "number"
             };
-            let PhoneValidateValue = (e) => {
+            let PhoneValidateValue = e => {
                 if (!e.target.validity.valid) ErrorTextRef.current.innerHTML = "Введите корректный адрес телефона";
                 e.preventDefault();
             };
-            let FormValidate = (e) => {
+            let FormValidate = e => {
                 e.preventDefault()
                 SumInputRef.current.value = SumInputRef.current.value.replace(RubleSumbol, '')
                 if (PhoneInputRef.current.value === "") {
