@@ -21,7 +21,6 @@ const TerminalInterface = (props) => {
         if(document.scrollHeight > document.clientHeight){alert("meme")}
         SetEditMode(props.store.state.payableStatus.isPayed)
     }, [props.store.state.payableStatus.isPayed])
-
     if (EditMode === true && props.Redirect() === true) return <Redirect to={"/"}/>
 
     return (
