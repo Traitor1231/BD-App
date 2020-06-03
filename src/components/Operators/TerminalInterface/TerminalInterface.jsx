@@ -18,7 +18,6 @@ export let ErrorTextRef = React.createRef();
 const TerminalInterface = (props) => {
     let [EditMode, SetEditMode] = useState()
     useEffect(() => {
-        if(document.scrollHeight > document.clientHeight){alert("meme")}
         SetEditMode(props.store.state.payableStatus.isPayed)
     }, [props.store.state.payableStatus.isPayed])
     if (EditMode === true && props.Redirect() === true) return <Redirect to={"/"}/>
