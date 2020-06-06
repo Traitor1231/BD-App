@@ -12,7 +12,8 @@
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-text-mask": "^5.4.3"
+    "react-text-mask": "^5.4.3",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,7 +37,6 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
-    "styled-components": "^5.1.0"
+    "node-sass": "^4.14.1"
   }
 }
