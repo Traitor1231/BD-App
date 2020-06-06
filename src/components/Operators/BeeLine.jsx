@@ -1,18 +1,14 @@
 import React from 'react';
-import {OperatorTextWrapper} from "./OperatorsStyles";
-import TerminalInterfaceContainer from "../Operators/TerminalInterface/TerminalInterfaceContaner"
+import { OperatorTextWrapper } from './OperatorsStyles';
+import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner';
 
-const BeeLine = () => {
+const BeeLine = () => (
+  <main>
+    <section>
+      <OperatorTextWrapper>BEELINE</OperatorTextWrapper>
+      <TerminalInterfaceContainer />
+    </section>
+  </main>
+);
 
-    return (
-        <main>
-            <section>
-                <OperatorTextWrapper>BEELINE</OperatorTextWrapper>
-                <TerminalInterfaceContainer/>
-            </section>
-        </main>
-    )
-
-}
-
-export default BeeLine
+export default BeeLine;

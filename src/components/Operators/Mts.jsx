@@ -1,18 +1,15 @@
 import React from 'react';
-import {OperatorTextWrapper} from "./OperatorsStyles";
-import TerminalInterfaceContainer from "./TerminalInterface/TerminalInterfaceContaner";
+import { OperatorTextWrapper } from './OperatorsStyles';
+import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner';
 
 
-const Mts = () => {
-    return (
-        <main>
-            <section>
-                <OperatorTextWrapper>MTS</OperatorTextWrapper>
-                <TerminalInterfaceContainer/>
-            </section>
-        </main>
-    )
+const Mts = () => (
+  <main>
+    <section>
+      <OperatorTextWrapper>MTS</OperatorTextWrapper>
+      <TerminalInterfaceContainer />
+    </section>
+  </main>
+);
 
-}
-
-export default Mts
+export default Mts;

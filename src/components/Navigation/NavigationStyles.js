@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const OperatorLogoWrapper = styled.div`
     display:inline-block;
@@ -15,7 +15,7 @@ export const OperatorLogoWrapper = styled.div`
     filter: invert(1);
     
 }
-`
+`;
 
 export const ChooseOperatorTextWrapper = styled.h1`
   font-weight: normal;
@@ -43,4 +43,4 @@ export const OperatorTextWrapper = styled.div`
         font-size: 20px;
     }
 
-`
+`;

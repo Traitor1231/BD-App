@@ -1,18 +1,14 @@
 import React from 'react';
-import {OperatorTextWrapper} from "./OperatorsStyles";
-import TerminalInterfaceContainer from "./TerminalInterface/TerminalInterfaceContaner";
+import { OperatorTextWrapper } from './OperatorsStyles';
+import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner';
 
-const Megafon = () =>{
+const Megafon = () => (
+  <main>
+    <section>
+      <OperatorTextWrapper>MEGAFON</OperatorTextWrapper>
+      <TerminalInterfaceContainer />
+    </section>
+  </main>
+);
 
-    return (
-        <main>
-            <section>
-                <OperatorTextWrapper>MEGAFON</OperatorTextWrapper>
-                <TerminalInterfaceContainer/>
-            </section>
-        </main>
-    )
-
-}
-
-export default Megafon
+export default Megafon;

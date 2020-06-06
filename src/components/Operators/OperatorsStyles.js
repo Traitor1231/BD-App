@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
- export const OperatorTextWrapper = styled.h2`
+export const OperatorTextWrapper = styled.h2`
     text-align:center;
     color:white;
     font-size: 8vw;
@@ -8,5 +8,4 @@ import styled from "styled-components";
     @media(max-width:357px){
         font-size: 28px;
     }
-`
-
+`;

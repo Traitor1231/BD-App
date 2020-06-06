@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
 export const WreapperMainContaner = styled.div`
 text-align: center;
 min-width: 300px;
