@@ -27,10 +27,10 @@ const store = {
     },
   },
   SubmitData() {
-    this.state.payableStatus.isPayed = true;
+    store.state.payableStatus.isPayed = true;
   },
   RejectData() {
-    this.state.payableStatus.isPayed = false;
+    store.state.payableStatus.isPayed = false;
   },
 
 };

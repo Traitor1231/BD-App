@@ -14,6 +14,8 @@ import {
 export const PhoneInputRef = React.createRef();
 export const SumInputRef = React.createRef();
 export const ErrorTextRef = React.createRef();
+export const PayButtonRef = React.createRef();
+export const BackButtonRef = React.createRef();
 
 const TerminalInterface = (props) => {
   const [EditMode, SetEditMode] = useState();
@@ -50,9 +52,9 @@ const TerminalInterface = (props) => {
         />
       </InputWrapper>
       <InputWrapper>
-        <PayButton type="submit">Оплатить</PayButton>
+        <PayButton ref={PayButtonRef} type="submit">Оплатить</PayButton>
         <NavLink to="/">
-          <BackButton onClick={props.ReturnToMainMenu}>Назад</BackButton>
+          <BackButton ref={BackButtonRef} onClick={props.ReturnToMainMenu}>Назад</BackButton>
         </NavLink>
       </InputWrapper>
     </Form>
