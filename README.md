@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Online App 
 
-Heroku: https://bravedevelopers-spa-app.herokuapp.com/<br />
+Heroku: https://bravedev-spa-app.herokuapp.com/<br />
 Responsinator: https://www.responsinator.com/?url=https%3A%2F%2Fbravedevelopers-spa-app.herokuapp.com%2F
 
 ## Available Scripts
