@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 
 const NavigationContainer = () => (
   <StoreContext.Consumer>
-    {(store) => <Navigation props={store} />}
+    {(store:any) => <Navigation store={store} />}
   </StoreContext.Consumer>
 );
 

@@ -4,8 +4,22 @@ import {
   ChooseOperatorTextWrapper, OperatorLogo, OperatorLogoWrapper, OperatorTextWrapper,
 } from './NavigationStyles';
 
-const Navigation = (props) => {
-  const NavigationContent = props.props.state.operatorsInfo.map((store) => (
+type NavigationPropsType = {
+    store:
+        {
+            state:
+                {
+                    operatorsInfo:
+                        {
+                            name: string | undefined;
+                            image: string | undefined;
+                            alt: string | undefined;
+                        }[];
+                };
+        };
+}
+const Navigation: React.FC<NavigationPropsType> = ({store}) => {
+  const NavigationContent = store.state.operatorsInfo.map((store) => (
     <NavLink to={`/${store.name}`}>
       <OperatorLogoWrapper>
         <OperatorLogo src={store.image} alt={store.alt} />
