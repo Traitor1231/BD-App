@@ -33,11 +33,11 @@ const store = {
       isPayed: false,
     } as payableStatusType,
   },
-  SubmitData():boolean {
-    return store.state.payableStatus.isPayed = true;
+  SubmitData():void {
+     store.state.payableStatus.isPayed = true;
   },
-  RejectData():boolean {
-    return store.state.payableStatus.isPayed = false;
+  RejectData():void {
+     store.state.payableStatus.isPayed = false;
   },
 };
 
