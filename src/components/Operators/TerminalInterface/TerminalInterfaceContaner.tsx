@@ -14,12 +14,15 @@ const TerminalInterfaceContainer = () => {
   const GetSumValue = (): any => SumInputRef.current!.value
   const GetPhoneValue = (): number | string => PhoneInputRef.current!.value
   const ChangeInputType = (Type: string): void => { SumInputRef.current!.type = Type }
-  const SetErrorMessage = (Message: string): void => { ErrorTextRef.current!.innerHTML = Message }
   const SetLengthLimitValue = (): void => { SumInputRef.current!.value = GetSumValue().substring(0, 4) }
   const SetRubbleSumbolToStringEnd = (): void => { SumInputRef.current!.value = GetSumValue() + RubleSumbol }
   const ChangeSelectionEnd = (): void => { SumInputRef.current!.selectionEnd = SumInputRef.current!.selectionStart! - 1 }
   const ReplaceSumbols = (from: string | RegExp, to: string | RegExp): void => { SumInputRef.current!.value = GetSumValue().replace(from, to) }
-  const isFormSubmit = (isDataSubmit: () => void, ErrorMessageText: void, logicalFlag: boolean) => {
+  const SetErrorMessage = (Message: string): string => {
+    const AlertMessage = ErrorTextRef.current!.innerHTML = Message
+    return AlertMessage
+  }
+  const isFormSubmit = (isDataSubmit: () => void, ErrorMessageText: string, logicalFlag: boolean) => {
     isInterfaceDisabled(false)
     isDataSubmit()
     alert(ErrorMessageText)
