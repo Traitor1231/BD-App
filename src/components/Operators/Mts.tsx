@@ -1,7 +1,6 @@
-import React from 'react';
-import { OperatorTextWrapper } from './OperatorsStyles';
-import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner';
-
+import React from 'react'
+import { OperatorTextWrapper } from './OperatorsStyles'
+import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner'
 
 const Mts = () => (
   <main>
@@ -10,6 +9,6 @@ const Mts = () => (
       <TerminalInterfaceContainer />
     </section>
   </main>
-);
+)
 
-export default Mts;
+export default Mts

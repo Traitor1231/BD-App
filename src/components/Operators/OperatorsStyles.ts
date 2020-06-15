@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const OperatorTextWrapper = styled.h2`
     text-align:center;
@@ -8,4 +8,4 @@ export const OperatorTextWrapper = styled.h2`
     @media(max-width:357px){
         font-size: 28px;
     }
-`;
+`

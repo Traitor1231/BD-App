@@ -1,6 +1,6 @@
-import React from 'react';
-import { OperatorTextWrapper } from './OperatorsStyles';
-import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner';
+import React from 'react'
+import { OperatorTextWrapper } from './OperatorsStyles'
+import TerminalInterfaceContainer from './TerminalInterface/TerminalInterfaceContaner'
 
 const BeeLine = () => (
   <main>
@@ -9,6 +9,6 @@ const BeeLine = () => (
       <TerminalInterfaceContainer />
     </section>
   </main>
-);
+)
 
-export default BeeLine;
+export default BeeLine
