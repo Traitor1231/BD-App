@@ -31,7 +31,7 @@ const Navigation: React.FC<NavigationPropsType> = ({ store }) => {
     <header>
       <nav>
         <ChooseOperatorTextWrapper>
-                    ВЫБЕРИТЕ ОПЕРАТОРА
+          ВЫБЕРИТЕ ОПЕРАТОРА
         </ChooseOperatorTextWrapper>
         {NavigationContent}
       </nav>

@@ -7,7 +7,6 @@ import App from './App'
 import store from './store/store'
 import { Provider } from './StoreContext'
 
-export const rerenderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -16,8 +15,7 @@ export const rerenderEntireTree = () => {
     </BrowserRouter>,
     document.getElementById('root')
   )
-}
-rerenderEntireTree()
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

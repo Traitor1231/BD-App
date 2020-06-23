@@ -1,14 +1,8 @@
 import styled from 'styled-components'
+import {ErrorMessage} from "formik";
+import MaskedInput from "react-text-mask";
 
-export const ErrorText = styled.div`
-  color: white;
-  font-size: 4vw;
-  @media (max-width: 357px) {
-    font-size: 14px;
-  }
-`
-
-export const PayButton = styled.button`
+export const Button = styled.button`
   width: 50%;
   padding: 10px 2vw;
   font-size: 4vw;
@@ -31,12 +25,15 @@ export const PayButton = styled.button`
   }
 `
 
-export const BackButton = styled(PayButton)`
-  width: 50%;
-  border-radius: 0px 500px 500px 0px;
+export const ErrorText = styled(ErrorMessage)`
+  color: white;
+  font-size: 4vw;
+  @media (max-width: 357px) {
+    font-size: 14px;
+  }
 `
 
-export const PhoneInput = styled.input`
+export const InputMask = styled(MaskedInput)`
   -moz-appearance: textfield;
   width: 100%;
   padding: 10px 2vw;
@@ -92,6 +89,18 @@ export const PhoneInput = styled.input`
     font-size: 14px;
   }
 `
-export const SumInput = styled(PhoneInput)``
-export const InputWrapper = styled.div``
-export const Form = styled.form``
+
+export const Fieldset = styled.fieldset`
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-block-start: 0px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+  padding-block-end: 0px;
+  min-inline-size: initial;
+  border-width: 0px;
+  border-style: none;
+  border-color: initial;
+  border-image: none;
+`

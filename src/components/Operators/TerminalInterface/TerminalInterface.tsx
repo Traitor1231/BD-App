@@ -1,91 +1,89 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink, Redirect } from 'react-router-dom'
-import InputMask from 'react-input-mask'
+import React from 'react'
 import {
-  ErrorText,
-  BackButton,
-  Form,
-  InputWrapper,
-  PayButton,
-  PhoneInput,
-  SumInput
+    ErrorText,
+    InputMask,
+    Button,
+    Fieldset,
 } from './TerminalinterfaceStyles'
+import {Formik, Form, Field} from 'formik';
+import * as Yup from 'yup';
 
-export const PhoneInputRef = React.createRef() as React.RefObject<HTMLInputElement>
-export const SumInputRef = React.createRef() as React.RefObject<HTMLInputElement>
-export const ErrorTextRef = React.createRef() as React.RefObject<HTMLDivElement>
-export const PayButtonRef = React.createRef() as React.RefObject<HTMLButtonElement>
-export const BackButtonRef = React.createRef() as React.RefObject<HTMLButtonElement>
 type TerminalInterfacePropsType = {
-    FormValidate: (e: { preventDefault: () => void }) => void,
-    PhoneValidateValue: (e: any) => void,
-    ReturnToMainMenu: () => boolean,
-    SumValidateMaxValue: () => void,
-    DeleteRubleSymbol: () => void,
-    AddRubleSymbol: () => void,
-    isRedirect: () => boolean,
     store: {
         state: {
             payableStatus: {
                 isPayed: boolean | any,
             },
         },
+        FormInputsValidateData: [
+            {
+                name: string,
+                mask: Array<string>,
+                placeholder: string,
+                type: string,
+                guide: boolean,
+                autoComplete: string,
+                validate: Function,
+            },
+        ],
+        FormButtonsValidateData:[
+            {
+                attribute:string,
+                text:string
+            }
+        ]
     },
 };
-const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({
-  store,
-  isRedirect,
-  FormValidate,
-  PhoneValidateValue,
-  DeleteRubleSymbol,
-  AddRubleSymbol,
-  SumValidateMaxValue,
-  ReturnToMainMenu
-}) => {
-  const [EditMode, SetEditMode] = useState()
-  useEffect(() => {
-    SetEditMode(store.state.payableStatus.isPayed)
-  }, [store.state.payableStatus.isPayed])
-  if (EditMode === true && isRedirect()) return <Redirect to="/" />
 
-  return (
-    <Form action="/" onSubmit={FormValidate}>
-      <ErrorText ref={ErrorTextRef} />
-      <InputWrapper>
-        <InputMask mask="+7 (999) 999-99-99">
-          {() => (
-            <PhoneInput
-              type="tel"
-              onInvalid={PhoneValidateValue}
-              ref={PhoneInputRef}
-              pattern={'\\+7\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}'}
-              placeholder="Телефон"
-              title=""
+const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ store }) => {
+    const inputField = store.FormInputsValidateData.map((store) => (
+        <div>
+            <ErrorText name={store.name} component="div"/>
+            <Field name={store.name}
+                   validate={store.validate}
+                   render={({field}) => (
+                       <InputMask
+                           {...field}
+                           mask={store.mask}
+                           placeholder={store.placeholder}
+                           type={store.type}
+                           guide={store.guide}
+                           autoComplete={store.autoComplete}
+                       />
+                   )}
             />
-          )}
-        </InputMask>
-      </InputWrapper>
-      <InputWrapper>
-        <SumInput
-          type="number"
-          onBlur={DeleteRubleSymbol}
-          onFocus={AddRubleSymbol}
-          onInput={SumValidateMaxValue}
-          ref={SumInputRef}
-          placeholder="Сумма"
-        />
-      </InputWrapper>
-      <InputWrapper>
-        <PayButton ref={PayButtonRef} type="submit">
-                    Оплатить
-        </PayButton>
-        <NavLink to="/">
-          <BackButton ref={BackButtonRef} onClick={ReturnToMainMenu}>
-                        Назад
-          </BackButton>
-        </NavLink>
-      </InputWrapper>
-    </Form>
-  )
-}
+        </div>
+    ))
+    const ButtonsField = store.FormButtonsValidateData.map((store) => (
+            <Button type={store.attribute}>{store.text}</Button>
+    ))
+    return (
+        <Formik
+            initialValues={{Phone: '', Sum: ''}}
+            validationSchema={Yup.object({
+                Phone: Yup.string()
+                    .matches(/\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/,'Введите корректный номер телефона')
+                    .required('Вы не заполнили поле "Телефон"'),
+                Sum: Yup.number()
+                    .max(1000, 'Введите значение в диапазоне от 1 до 1000 в поле: "Сумма"!')
+                    .required('Вы не заполнили поле "Сумма"'),
+            })}
+            onSubmit={(values, {setSubmitting}) => {
+                setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                }, 1000);
+            }}
+        >
+            {({isSubmitting}) => (
+                <Form>
+                    <Fieldset disabled={isSubmitting}>
+                        {inputField}
+                        {ButtonsField}
+                    </Fieldset>
+                </Form>
+            )}
+        </Formik>
+    );
+};
 export default TerminalInterface
