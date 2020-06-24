@@ -5,8 +5,11 @@ import * as Yup from 'yup';
 import TerminalInterfaceButtons from "./TerminalInterfaceContent/TerminalInterfaceButtons";
 import TerminalInterfaceInputs from "./TerminalInterfaceContent/TerminalInterfaceInputs";
 import {TerminalInterfacePropsType} from "./TerminalInterfaceTypes";
+import { useHistory } from "react-router-dom";
+
 
 const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ store }) => {
+    const redirect = useHistory();
     return (
         <Formik
             initialValues={{Phone: '', Sum: ''}}
@@ -22,6 +25,7 @@ const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ store }) => {
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2));
                     setSubmitting(false);
+                    redirect.push("/");
                 }, 1000);
             }}
         >
