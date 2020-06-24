@@ -1,62 +1,12 @@
 import React from 'react'
-import {
-    ErrorText,
-    InputMask,
-    Button,
-    Fieldset,
-} from './TerminalinterfaceStyles'
-import {Formik, Form, Field} from 'formik';
+import { Fieldset } from './TerminalinterfaceStyles'
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-
-type TerminalInterfacePropsType = {
-    store: {
-        state: {
-            payableStatus: {
-                isPayed: boolean | any,
-            },
-        },
-        FormInputsValidateData: [
-            {
-                name: string,
-                mask: Array<string>,
-                placeholder: string,
-                type: string,
-                guide: boolean,
-                autoComplete: string,
-                validate: Function,
-            },
-        ],
-        FormButtonsValidateData:[
-            {
-                attribute:string,
-                text:string
-            }
-        ]
-    },
-};
+import TerminalInterfaceButtons from "./TerminalInterfaceContent/TerminalInterfaceButtons";
+import TerminalInterfaceInputs from "./TerminalInterfaceContent/TerminalInterfaceInputs";
+import {TerminalInterfacePropsType} from "./TerminalInterfaceTypes";
 
 const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ store }) => {
-    const inputField = store.FormInputsValidateData.map((store) => (
-        <div>
-            <ErrorText name={store.name} component="div"/>
-            <Field name={store.name}
-                   validate={store.validate}
-                   render={({field}) => (
-                       <InputMask
-                           {...field}
-                           mask={store.mask}
-                           placeholder={store.placeholder}
-                           type={store.type}
-                           guide={store.guide}
-                           autoComplete={store.autoComplete}
-                       />
-                   )}
-            />
-        </div>
-    ))
-    const ButtonsField = store.FormButtonsValidateData.map((store) => (
-            <Button type={store.attribute}>{store.text}</Button>
-    ))
     return (
         <Formik
             initialValues={{Phone: '', Sum: ''}}
@@ -78,8 +28,8 @@ const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ store }) => {
             {({isSubmitting}) => (
                 <Form>
                     <Fieldset disabled={isSubmitting}>
-                        {inputField}
-                        {ButtonsField}
+                    <TerminalInterfaceInputs store={store}/>
+                    <TerminalInterfaceButtons store={store}/>
                     </Fieldset>
                 </Form>
             )}
