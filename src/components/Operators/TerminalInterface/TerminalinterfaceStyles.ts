@@ -33,6 +33,14 @@ export const ErrorText = styled(ErrorMessage)`
   }
 `
 
+export const SuccessMessageText = styled.div`
+  color: white;
+  font-size: 4vw;
+  @media (max-width: 357px) {
+    font-size: 14px;
+  }
+`
+
 export const InputMask = styled(MaskedInput)`
   -moz-appearance: textfield;
   width: 100%;

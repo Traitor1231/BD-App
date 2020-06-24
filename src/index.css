@@ -17,44 +17,17 @@ code {
 }
 
 button[type="button"] {
-  text-decoration: none;
-  display: inline-block;
-  width: 50%;
-  padding: 10px 2vw;
-  font-size: 4vw;
-  color: white;
   border-radius: 0px 500px 500px 0px;
-  background: none;
-  border: 2px solid white;
-  margin: 1.3vw 0px;
-  transition: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-button[type="button"]:hover {
-  transform: scale(1.1);
-  background: white;
-  border: 2px solid black;
-  color: black;
-}
-
-@media (max-width: 357px) {
-  button[type="button"] {
-    font-size: 14px;
-  }
 }
 
 html {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat fixed;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 @keyframes gradient {

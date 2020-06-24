@@ -7,11 +7,11 @@ export type TerminalInterfacePropsType = {
             type: string,
             guide: boolean,
             autoComplete: string,
-            validate: string,
+            validate: string | undefined
         }[],
         FormButtonsValidateData: {
             attribute: 'submit' | 'reset' | 'button',
-            text: string
+            text: string,
         }[],
     },
 };

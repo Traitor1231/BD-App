@@ -15,12 +15,13 @@ type FormInputsValidateDataType = {
   type:string,
   guide:boolean,
   autoComplete:string,
-  validate:string,
+  validate:string | undefined
 }
 
 type FormButtonsValidateData = {
   attribute:'submit' | 'reset' | 'button',
   text:string,
+  ref:string
 }
 
 const store = {
