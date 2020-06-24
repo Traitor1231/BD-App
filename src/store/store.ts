@@ -7,8 +7,20 @@ type OperatorsInfoType = {
   image: string
   alt: string
 }
-type payableStatusType = {
-  isPayed:boolean
+
+type FormInputsValidateDataType = {
+  name:string,
+  mask:Array<string>,
+  placeholder:string,
+  type:string,
+  guide:boolean,
+  autoComplete:string,
+  validate:string,
+}
+
+type FormButtonsValidateData = {
+  attribute:'submit' | 'reset' | 'button',
+  text:string,
 }
 
 const store = {
@@ -30,29 +42,30 @@ const store = {
         alt: 'MEGAFON',
       },
     ] as Array<OperatorsInfoType>,
-    payableStatus: {
-      isPayed: false,
-    } as payableStatusType,
   },
-  FormInputsValidateData:[
+  FormInputsValidateData: [
     {
-      name:"Phone",
-      mask:["+", 7, " ", "(", /[1-9]/, /\d/, /\d/, ")", " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, "-", /\d/, /\d/],
-      placeholder:"Телефон",
-      type:"tel",
-      guide:true,
-      autoComplete:"off",
+      name: "Phone",
+      mask: ["+", 7, " ", "(", /[1-9]/, /\d/, /\d/, ")", " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, "-", /\d/, /\d/],
+      placeholder: "Телефон",
+      type: "tel",
+      guide: true,
+      autoComplete: "off",
+      validate: ""
     },
     {
-      name:"Sum",
-      mask:[/\d/, /\d/, /\d/, /\d/],
-      placeholder:"Сумма",
-      type:"text",
-      guide:false,
-      autoComplete:"off",
-      validate(value: string, error: string = 'Поле: "Сумма" не может начинаться с нуля'){if (value.startsWith("0")) return error},
-    }
-  ],
+      name: "Sum",
+      mask: [/\d/, /\d/, /\d/, /\d/],
+      placeholder: "Сумма",
+      type: "text",
+      guide: false,
+      autoComplete: "off",
+      validate(value: string, error: string = 'Поле: "Сумма" не может начинаться с нуля') {
+        if (value.startsWith("0"))
+          return error;
+      },
+    },
+  ] as Array<FormInputsValidateDataType>,
   FormButtonsValidateData:[
     {
       attribute:"submit",
@@ -62,13 +75,7 @@ const store = {
       attribute:"button",
       text:"Назад",
     }
-  ],
-  SubmitData():void {
-     store.state.payableStatus.isPayed = true;
-  },
-  RejectData():void {
-     store.state.payableStatus.isPayed = false;
-  },
+  ] as Array<FormButtonsValidateData>,
 };
 
 export default store;

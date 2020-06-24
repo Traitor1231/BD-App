@@ -7,7 +7,7 @@ export type TerminalInterfacePropsType = {
             type: string,
             guide: boolean,
             autoComplete: string,
-            validate: Function,
+            validate: string,
         }[],
         FormButtonsValidateData: {
             attribute: 'submit' | 'reset' | 'button',
