@@ -1,9 +1,9 @@
 import React from "react";
-import {Button} from "../TerminalinterfaceStyles";
-import {TerminalInterfacePropsType} from "../TerminalInterfaceTypes";
+import {Button} from "./TerminalInterfaceButtonStyles";
+import {StoreTypes} from "../../../../../Types/Types";
 
 // @ts-ignore
-const TerminalInterfaceButtons: React.FC<TerminalInterfacePropsType> = ({ store }) => {
+const TerminalInterfaceButtons: React.FC<StoreTypes> = ({ store }) => {
 
     return (
         store.FormButtonsValidateData.map((store) => (

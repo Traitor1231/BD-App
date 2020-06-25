@@ -1,5 +1,10 @@
-export type TerminalInterfacePropsType = {
+export type StoreTypes = {
     store: {
+        operatorsInfo: {
+            name: string,
+            image: string,
+            alt: string,
+        }[],
         FormInputsValidateData: {
             name: string,
             mask: Array<string>,

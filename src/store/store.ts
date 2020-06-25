@@ -1,6 +1,7 @@
 import BeeLine_logo from '../assets/images/Bee-Line-logo.png';
 import Mts_logo from '../assets/images/Mts-logo.png';
 import MegaFon_logo from '../assets/images/Megafon-logo.png';
+import {validate} from "../Utils/Utils";
 
 type OperatorsInfoType = {
   name: string
@@ -25,7 +26,6 @@ type FormButtonsValidateData = {
 }
 
 const store = {
-  state: {
     operatorsInfo: [
       {
         name: 'BEELINE',
@@ -43,7 +43,6 @@ const store = {
         alt: 'MEGAFON',
       },
     ] as Array<OperatorsInfoType>,
-  },
   FormInputsValidateData: [
     {
       name: "Phone",
@@ -52,7 +51,7 @@ const store = {
       type: "tel",
       guide: true,
       autoComplete: "off",
-      validate: ""
+      validate:undefined
     },
     {
       name: "Sum",
@@ -61,10 +60,7 @@ const store = {
       type: "text",
       guide: false,
       autoComplete: "off",
-      validate(value: string, error: string = 'Поле: "Сумма" не может начинаться с нуля') {
-        if (value.startsWith("0"))
-          return error;
-      },
+      validate,
     },
   ] as Array<FormInputsValidateDataType>,
   FormButtonsValidateData:[

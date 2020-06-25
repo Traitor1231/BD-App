@@ -1,10 +1,10 @@
 import React from "react";
-import {ErrorText, InputMask} from "../TerminalinterfaceStyles";
 import {Field} from "formik";
-import {TerminalInterfacePropsType} from "../TerminalInterfaceTypes";
+import {ErrorText, InputMask} from "./TerminalInterfaceInputsStyles";
+import {StoreTypes} from "../../../../../Types/Types";
 
 // @ts-ignore
-const TerminalInterfaceInputs: React.FC<TerminalInterfacePropsType> = ({ store }) => {
+const TerminalInterfaceInputs: React.FC<StoreTypes> = ({ store }) => {
     return (
         store.FormInputsValidateData.map((store) => (
             <div>

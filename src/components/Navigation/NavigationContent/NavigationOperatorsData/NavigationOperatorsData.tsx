@@ -5,12 +5,12 @@ import {
     OperatorLogoWrapper,
     OperatorTextWrapper
 } from './NavigationOperatorsDataStyles'
-import {NavigationPropsType} from "../NavigationTypes";
+import {StoreTypes} from "../../../../Types/Types";
 
 // @ts-ignore
-const NavigationOperatorsData: React.FC<NavigationPropsType> = ({ store }) => {
+const NavigationOperatorsData: React.FC<StoreTypes> = ({ store }) => {
     return (
-        store.state.operatorsInfo.map((store) => (
+        store.operatorsInfo.map((store) => (
             <NavLink to={`/${store.name}`}>
                 <OperatorLogoWrapper>
                     <OperatorLogo src={store.image} alt={store.alt} />
