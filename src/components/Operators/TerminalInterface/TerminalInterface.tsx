@@ -1,15 +1,15 @@
 import React from 'react'
 import {Fieldset, SuccessMessageText} from './TerminalinterfaceStyles'
 import {Formik, Form} from 'formik';
-import * as Yup from 'yup';
 import TerminalInterfaceButtons from "./TerminalInterfaceContent/TerminalInterfaceButtons/TerminalInterfaceButtons";
 import TerminalInterfaceInputs from "./TerminalInterfaceContent/TerminalInterfaceInputs/TerminalInterfaceInputs";
 import {useHistory} from "react-router-dom";
 import {DisplaySuccessMessage, SuccessMessage} from "../../../Utils/Utils";
 import {StoreTypes} from "../../../Types/Types";
+import * as Yup from "yup";
 
 const TerminalInterface: React.FC<StoreTypes> = ({ store }) => {
-    const redirect = useHistory()
+    const redirect = useHistory();
     return (
         <Formik
             initialValues={{Phone: '', Sum: ''}}
@@ -22,14 +22,14 @@ const TerminalInterface: React.FC<StoreTypes> = ({ store }) => {
                     .required('Вы не заполнили поле "Сумма"'),
             })}
             onSubmit={(values, {setSubmitting}) => {
-                DisplaySuccessMessage("Отпрвка данных на сервер....")
+                DisplaySuccessMessage("Отпрвка данных на сервер....");
                 setTimeout(() => {
                     if (Math.round(Math.random()) === 1) {
-                        setSubmitting(true)
-                        DisplaySuccessMessage("Оплата произошла успешно,возврат в главное меню")
+                        setSubmitting(true);
+                        DisplaySuccessMessage("Оплата произошла успешно,возврат в главное меню");
                         setTimeout(() =>  redirect.push("/") ,3000)
                     } else {
-                        setSubmitting(false)
+                        setSubmitting(false);
                         DisplaySuccessMessage("В процессе оплаты произошла ошибка,попробуйте позже")
                     }
                 },3000)

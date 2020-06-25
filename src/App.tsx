@@ -6,14 +6,16 @@ import Megafon from './components/Operators/Megafon'
 import { MainContaner, WreapperMainContaner } from './AppStyles'
 import NavigationContainer from './components/Navigation/NavigationContainer'
 
-const App = () => (
-  <WreapperMainContaner>
-    <MainContaner>
-      <Route exact path="/" render={() => <NavigationContainer />} />
-      <Route path="/Mts" render={() => <Mts />} />
-      <Route path="/BeeLine" render={() => <BeeLine />} />
-      <Route path="/Megafon" render={() => <Megafon />} />
-    </MainContaner>
-  </WreapperMainContaner>
-)
+const App: React.FC = () => {
+    return(
+    <WreapperMainContaner>
+        <MainContaner>
+            <Route exact path="/" render={() => <NavigationContainer/>}/>
+            <Route path="/Mts" render={() => <Mts/>}/>
+            <Route path="/BeeLine" render={() => <BeeLine/>}/>
+            <Route path="/Megafon" render={() => <Megafon/>}/>
+        </MainContaner>
+    </WreapperMainContaner>
+    )
+};
 export default App

@@ -17,6 +17,7 @@ export type StoreTypes = {
         FormButtonsValidateData: {
             attribute: 'submit' | 'reset' | 'button',
             text: string,
+            ref: string
         }[],
     },
 };
