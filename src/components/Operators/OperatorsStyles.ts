@@ -8,4 +8,4 @@ export const OperatorTextWrapper = styled.h2`
     @media(max-width:357px){
         font-size: 28px;
     }
-`
+`;

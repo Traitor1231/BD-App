@@ -6,7 +6,7 @@ export const SuccessMessageText = styled.div`
   @media (max-width: 357px) {
     font-size: 14px;
   }
-`
+`;
 
 export const Fieldset = styled.fieldset`
   display: block;
@@ -21,4 +21,4 @@ export const Fieldset = styled.fieldset`
   border-style: none;
   border-color: initial;
   border-image: none;
-`
+`;

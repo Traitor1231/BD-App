@@ -7,15 +7,15 @@ import { MainContaner, WreapperMainContaner } from './AppStyles'
 import NavigationContainer from './components/Navigation/NavigationContainer'
 
 const App: React.FC = () => {
-    return(
+  return (
     <WreapperMainContaner>
-        <MainContaner>
-            <Route exact path="/" render={() => <NavigationContainer/>}/>
-            <Route path="/Mts" render={() => <Mts/>}/>
-            <Route path="/BeeLine" render={() => <BeeLine/>}/>
-            <Route path="/Megafon" render={() => <Megafon/>}/>
-        </MainContaner>
+      <MainContaner>
+        <Route exact path="/" render={() => <NavigationContainer/>}/>
+        <Route path="/Mts" render={() => <Mts/>}/>
+        <Route path="/BeeLine" render={() => <BeeLine/>}/>
+        <Route path="/Megafon" render={() => <Megafon/>}/>
+      </MainContaner>
     </WreapperMainContaner>
-    )
+  )
 };
 export default App

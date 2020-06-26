@@ -9,4 +9,4 @@ export const ChooseOperatorTextWrapper = styled.h1`
   @media (max-width: 1045px) {
     font-size: 26px;
   }
-`
+`;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {ErrorMessage} from "formik";
-import MaskedInput from "react-text-mask";
+import { ErrorMessage } from 'formik'
+import MaskedInput from 'react-text-mask'
 
 export const ErrorText = styled(ErrorMessage)`
   color: white;
@@ -8,7 +8,7 @@ export const ErrorText = styled(ErrorMessage)`
   @media (max-width: 357px) {
     font-size: 14px;
   }
-`
+`;
 
 export const InputMask = styled(MaskedInput)`
   -moz-appearance: textfield;
@@ -65,4 +65,4 @@ export const InputMask = styled(MaskedInput)`
   @media (max-width: 357px) {
     font-size: 14px;
   }
-`
+`;
