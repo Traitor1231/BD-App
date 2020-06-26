@@ -3,6 +3,7 @@ import { Field } from 'formik'
 import { ErrorText, InputMask } from './TerminalInterfaceInputsStyles'
 import { StoreTypes } from '../../../../../Types/Types'
 
+// @ts-ignore
 const TerminalInterfaceInputs: React.FC<StoreTypes> = ({ store }) => {
   return (
     store.FormInputsValidateData.map((store) => (
@@ -10,7 +11,7 @@ const TerminalInterfaceInputs: React.FC<StoreTypes> = ({ store }) => {
         <ErrorText name={store.name} component="div"/>
         <Field name={store.name}
           validate={store.validate}
-          render={({ field }) => (
+          render={({ field } : { field:any }) => (
             <InputMask
               {...field}
               mask={store.mask}
