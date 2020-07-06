@@ -1,6 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation'
 
+import BEELINE_logo from '../../assets/images/Bee-Line-logo.png';
+import MTS_logo from '../../assets/images/Mts-logo.png';
+import MEGAFON_logo from '../../assets/images/Megafon-logo.png';
+
 type OperatorsInfoType = {
   name: string
   image: string
@@ -10,17 +14,17 @@ type OperatorsInfoType = {
 const operatorsInfoProps = [
   {
     name: 'BEELINE',
-    image: '/static/media/Bee-Line-logo.ee3e5307.png',
+    image: BEELINE_logo,
     alt: 'BEELINE'
   },
   {
     name: 'MTS',
-    image: '/static/media/Mts-logo.dfeeed95.png',
+    image: MTS_logo,
     alt: 'MTS'
   },
   {
     name: 'MEGAFON',
-    image: '/static/media/Megafon-logo.5d8d8480.png',
+    image: MEGAFON_logo,
     alt: 'MEGAFON'
   }
 ] as Array<OperatorsInfoType>;
