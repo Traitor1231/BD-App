@@ -1,16 +1,16 @@
 import React from 'react'
 import { ChooseOperatorTextWrapper } from './NavigationStyles'
 import NavigationOperatorsData from './NavigationContent/NavigationOperatorsData/NavigationOperatorsData'
-import { StoreTypes } from '../../Types/Types';
+import { OperatorsInfoPropsType } from '../../Types/OperatorsInfoPropsType';
 
-const Navigation: React.FC<StoreTypes> = ({ store }) => {
+const Navigation: React.FC<OperatorsInfoPropsType> = ({ operatorsInfoProps }) => {
   return (
     <header>
       <nav>
         <ChooseOperatorTextWrapper>
           ВЫБЕРИТЕ ОПЕРАТОРА
         </ChooseOperatorTextWrapper>
-        <NavigationOperatorsData store={store}/>
+        <NavigationOperatorsData operatorsInfoProps={operatorsInfoProps}/>
       </nav>
     </header>
   )

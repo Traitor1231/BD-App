@@ -1,24 +1,24 @@
 import React from 'react'
 import { Field } from 'formik'
 import { ErrorText, InputMask } from './TerminalInterfaceInputsStyles'
-import { StoreTypes } from '../../../../../Types/Types'
+import { TerminalInterfacePropsType } from '../../../../../Types/TerminalInterfacePropsType';
 
 // @ts-ignore
-const TerminalInterfaceInputs: React.FC<StoreTypes> = ({ store }) => {
+const TerminalInterfaceInputs: React.FC<TerminalInterfacePropsType> = ({ TerminalInterfaceProps }) => {
   return (
-    store.FormInputsValidateData.map((store) => (
+    TerminalInterfaceProps.map((InputsAttributesData) => (
       <div>
-        <ErrorText name={store.name} component="div"/>
-        <Field name={store.name}
-          validate={store.validate}
+        <ErrorText name={InputsAttributesData.name} component="div"/>
+        <Field name={InputsAttributesData.name}
+          validate={InputsAttributesData.validate}
           render={({ field } : { field:any }) => (
             <InputMask
               {...field}
-              mask={store.mask}
-              placeholder={store.placeholder}
-              type={store.type}
-              guide={store.guide}
-              autoComplete={store.autoComplete}
+              mask={InputsAttributesData.mask}
+              placeholder={InputsAttributesData.placeholder}
+              type={InputsAttributesData.type}
+              guide={InputsAttributesData.guide}
+              autoComplete={InputsAttributesData.autoComplete}
             />
           )}
         />

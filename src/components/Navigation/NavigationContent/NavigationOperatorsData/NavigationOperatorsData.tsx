@@ -1,24 +1,24 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {
-    OperatorLogo,
-    OperatorLogoWrapper,
-    OperatorTextWrapper
+  OperatorLogo,
+  OperatorLogoWrapper,
+  OperatorTextWrapper
 } from './NavigationOperatorsDataStyles'
-import {StoreTypes} from "../../../../Types/Types";
+import { OperatorsInfoPropsType } from '../../../../Types/OperatorsInfoPropsType';
 
 // @ts-ignore
-const NavigationOperatorsData: React.FC<StoreTypes> = ({ store }) => {
-    return (
-        store.operatorsInfo.map((store) => (
-            <NavLink to={`/${store.name}`}>
-                <OperatorLogoWrapper>
-                    <OperatorLogo src={store.image} alt={store.alt} />
-                    <OperatorTextWrapper>{store.name}</OperatorTextWrapper>
-                </OperatorLogoWrapper>
-            </NavLink>
-        ))
-    )
-}
+const NavigationOperatorsData: React.FC<OperatorsInfoPropsType> = ({ operatorsInfoProps }) => {
+  return (
+    operatorsInfoProps.map((operatorsInfo) => (
+      <NavLink to={`/${operatorsInfo.name}`}>
+        <OperatorLogoWrapper>
+          <OperatorLogo src={operatorsInfo.image} alt={operatorsInfo.alt} />
+          <OperatorTextWrapper>{operatorsInfo.name}</OperatorTextWrapper>
+        </OperatorLogoWrapper>
+      </NavLink>
+    ))
+  )
+};
 
 export default NavigationOperatorsData

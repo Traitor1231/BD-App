@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button } from './TerminalInterfaceButtonStyles'
-import { StoreTypes } from '../../../../../Types/Types'
 import { useHistory } from 'react-router-dom'
+import { TerminalInterfacePropsType } from '../../../../../Types/TerminalInterfacePropsType';
 
 // @ts-ignore
-const TerminalInterfaceButtons: React.FC<StoreTypes> = ({ store }) => {
+const TerminalInterfaceButtons: React.FC<TerminalInterfacePropsType> = ({ TerminalInterfaceProps }) => {
   const history = useHistory();
   return (
-    store.FormButtonsValidateData.map((store) => (
-      <Button onClick={() => history.push(store.ref)} type={store.attribute}>{store.text}</Button>
+    TerminalInterfaceProps.map((ButtonsAttributesData) => (
+      <Button onClick={() => history.push(ButtonsAttributesData.ref)} type={ButtonsAttributesData.attribute}>{ButtonsAttributesData.text}</Button>
     ))
   )
 };

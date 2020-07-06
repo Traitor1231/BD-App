@@ -5,10 +5,10 @@ import TerminalInterfaceButtons from './TerminalInterfaceContent/TerminalInterfa
 import TerminalInterfaceInputs from './TerminalInterfaceContent/TerminalInterfaceInputs/TerminalInterfaceInputs'
 import { useHistory } from 'react-router-dom'
 import { DisplaySuccessMessage, SuccessMessage } from '../../../Utils/Utils'
-import { StoreTypes } from '../../../Types/Types'
 import * as Yup from 'yup'
+import { TerminalInterfacePropsType } from '../../../Types/TerminalInterfacePropsType';
 
-const TerminalInterface: React.FC<StoreTypes> = ({ store }) => {
+const TerminalInterface: React.FC<TerminalInterfacePropsType> = ({ TerminalInterfaceProps }) => {
   const redirect = useHistory();
   return (
     <Formik
@@ -39,8 +39,8 @@ const TerminalInterface: React.FC<StoreTypes> = ({ store }) => {
         <Form>
           <SuccessMessageText ref={SuccessMessage}/>
           <Fieldset disabled={isSubmitting}>
-            <TerminalInterfaceInputs store={store}/>
-            <TerminalInterfaceButtons store={store}/>
+            <TerminalInterfaceInputs TerminalInterfaceProps={TerminalInterfaceProps} />
+            <TerminalInterfaceButtons TerminalInterfaceProps={TerminalInterfaceProps} />
           </Fieldset>
         </Form>
       )}
